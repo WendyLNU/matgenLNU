@@ -1,1 +1,39 @@
-
+1、
+import pymatgen as mg
+# Creates cubic Lattice with lattice parameter 4.2
+lattice = mg.Lattice.cubic(4.2)
+structure = mg.Structure(lattice, ["Cs", "Cl"], [[0, 0, 0], [0.5, 0.5, 0.5]])
+print(structure)
+print("First site of the structure is {}".format(structure[0]))
+【执行结果：
+Full Formula (Cs1 Cl1)
+Reduced Formula: CsCl
+abc   :   4.200000   4.200000   4.200000
+angles:  90.000000  90.000000  90.000000
+Sites (2)
+  #  SP      a    b    c
+---  ----  ---  ---  ---
+  0  Cs    0    0    0
+  1  Cl    0.5  0.5  0.5
+First site of the structure is [0. 0. 0.] Cs
+】
+这是一个化学物质的结构，通过format（structure【0】）可以显示出CsCl结构矩阵中的第一行的数据。
+pymatgen基础模块里的Structure（）功能，就是做出一个化学物质的结构矩阵。
+2、
+在pymatgen里我们可以对我们自己所创建出来的structure进行一些个性化的操作和改变，或者说是实验。
+最后我们可以对我们设计的最后的structure以文件的形式保存起来，根据我们自己的需求对输入输出文件任意确定文件的格式和扩展名。
+【例：
+      structure.to(filename="POSCAR")
+      structure.to(filename="CsCl.cif")
+】
+3、
+并且我们还可以获取这些我们生成的文件，在后面可以加以利用或者输出查看。
+【例：
+     structure = mg.Structure.from_file("POSCAR")
+print(structure.to(fmt="poscar"))
+print(structure.to(fmt="cif"))
+】
+4、
+目前在第一个跑成功的例子中，发现了两个pymatgen的模块的使用。分别是 pymatgen.analysis和   pymatgen.symmetry的子包的使用。
+ pymatgen.analysis模块主要是关于一些分析和判断的功能。
+pymatgen.symmetry模块主要是在结构对称性上一些相关问题的处理。
