@@ -1,3 +1,7 @@
+
+
+
+
 import pymatgen as mg
 
 si = mg.Element("Si")
@@ -66,7 +70,5 @@ print(structure.to(fmt="cif"))
 structure = mg.Structure.from_file("POSCAR")
 
 
-from  pymatgen.io.vasp.setspymatgen  import MPRelaxSet
-v = MPRelaxSet(structure)
-v.write_input("MyInputFiles") #Writes a complete set of input files for structure to the directory MyInputFiles
+
 
