@@ -11,3 +11,4 @@ run = BSVasprun("vasprun.xml", parse_projected_eigen=True)
 bs = run.get_band_structure("KPOINTS")
 
 print("number of bands", bs.nb_bands)
+print("number of kpoints", len(bs.kpoints))
