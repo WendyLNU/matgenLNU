@@ -3,6 +3,8 @@
 *.so
 *.pyc
 *.swp
+*.cif
+POSCAR
 dist
 _build
 build
