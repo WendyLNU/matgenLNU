@@ -15,7 +15,7 @@ structure = Structure(latt, ["Cs", "Cl"], [[0, 0, 0], [0.5, 0.5, 0.5]])
 
 c = XRDCalculator()
 
-#get_plot返回的结果就是一个图片，可以用pyplot展示和保存
+#get_plot返回的结果就是一个pyplot类型的图片
 image = c.get_plot(structure, two_theta_range=(0, 90), annotate_peaks=True, ax=None, with_labels=True, fontsize=16)
 
 #image.show()
