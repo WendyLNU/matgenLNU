@@ -68,6 +68,9 @@ e_surf_list = surface_energies_Ni.values()
 # We can now construct a Wulff shape with an accuracy up to a max Miller index of 3
 wulffshape = WulffShape(Ni.lattice, miller_list, e_surf_list)
 
+
+
+
 # Let's get some useful information from our wulffshape object
 print("shape factor: %.3f, anisotropy: \
 %.3f, weighted surface energy: %.3f J/m^2" %(wulffshape.shape_factor,
