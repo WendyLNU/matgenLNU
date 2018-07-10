@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 #The file "vasprun.xml" is in aim_data. Rename it after unzip.
 run = BSVasprun("vasprun.xml", parse_projected_eigen=True)
 
-bs = run.get_band_structure("KPOINTS")
+bs = run.get_band_structure("KPOINTS")#得到计算能带，（我只查到这个计算能带是vasp中的内容，kpoint是对应的坐标，具体对于VASP我也不是很了解）
 
 print("number of bands", bs.nb_bands)
 print("number of kpoints", len(bs.kpoints))
@@ -26,7 +26,7 @@ print(bs.bands[Spin.down][9,:])
 
 n=0
 
-for kpoints,e in zip(bs.kpoints,bs.bands[Spin.down][9.:]):
+for kpoints,e in zip(bs.kpoints,bs.bands[Spin.down][9,:]):
     n += 1
     if n == 11:
         print("...")
