@@ -3,6 +3,7 @@ from pymatgen.electronic_structure.plotter import CohpPlotter
 from pymatgen.io.lobster import Cohpcar
 
 COHPCAR_path = "E:/Python/pymatgen-master/test_files/cohp/COHPCAR.lobster"
+#源代码是："COHPCAR_path = \"/Users/shyuep/repos/pymatgen/test_files/cohp/COHPCAR.lobster"
 cohpcar = Cohpcar(filename=COHPCAR_path)
 #获取COHPCAR文件的名称
 cdata = cohpcar.cohp_data
