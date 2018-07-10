@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 #The file "vasprun.xml" is in aim_data. Rename it after unzip.
 run = BSVasprun("vasprun.xml", parse_projected_eigen=True)
 
-bs = run.get_band_structure("KPOINTS")
+bs = run.get_band_structure("KPOINTS")#得到计算能带，（我只查到这个计算能带是vasp中的内容，kpoint是对应的坐标，具体对于VASP我也不是很了解）
 
 print("number of bands", bs.nb_bands)
 print("number of kpoints", len(bs.kpoints))
@@ -21,19 +21,16 @@ print(bs.is_spin_polarized)
 print(bs.bands)
 
 print(bs.bands[Spin.up].shape)
-print(bs.bands[Spin.down][9,:])
-
-
-n=0
-
-for kpoints,e in zip(bs.kpoints,bs.bands[Spin.down][9.:]):
-    n += 1
-    if n == 11:
-        print("...")
-        if 10 < n < 190:
-            continue
-            print("kx = %5.3f ky = %5.3f kz = %5.3f eps(k) = %8.4f" % (tuple(kpoints.frac_coords) + (e,)))
-
+print(bs.bands[Spin.down][163,:])
+for kpoints,e in zip(bs.kpoints,bs.bands[Spin.down][163,:]):
+   print("kx = %5.3f ky = %5.3f kz = %5.3f eps(k) = %8.4f" % (tuple(kpoints.frac_coords) + (e,)))
+ax = plt.gca()
+ax.set_title("NiO Band Structure", fontsize=20)
+xlim = ax.get_xlim()
+ax.hlines(0,xlim[0],xlim[1],linestyles="dashed",color="black")
+ax.plot((),(),"b-",label="spin up")
+ax.plot((),(),"r--",label="spin down")
+ax.legend(fontsize=16,loc="upper left")
 
 
 
