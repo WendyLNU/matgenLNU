@@ -28,6 +28,6 @@ structure = Structure(latt, ["Cs", "Cs", "Cs", "Cs", "Cl", "Cl", "Cl", "Cl"],
                        [0.5, 0.5, 0.5], [0, 0, 0.5], [0, 0.5, 0], [0.5, 0, 0]])
 
 image = c.get_plot(structure, two_theta_range=(0, 90), annotate_peaks=True, ax=None, with_labels=True, fontsize=16)
-#display(Image(filename=('./PDF - beta CsCl.png')))这段代码display我还没有弄明白，帮我看看哪里出问题了
+#display(Image(filename="PDF - beta CsCl.png"))
 #image.show()
 image.savefig("beta CsCl.jpg")

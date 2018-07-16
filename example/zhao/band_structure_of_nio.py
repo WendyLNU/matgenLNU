@@ -24,13 +24,21 @@ print(bs.bands[Spin.up].shape)
 print(bs.bands[Spin.down][163,:])
 for kpoints,e in zip(bs.kpoints,bs.bands[Spin.down][163,:]):
    print("kx = %5.3f ky = %5.3f kz = %5.3f eps(k) = %8.4f" % (tuple(kpoints.frac_coords) + (e,)))
-ax = plt.gca()
-ax.set_title("NiO Band Structure", fontsize=20)
-xlim = ax.get_xlim()
-ax.hlines(0,xlim[0],xlim[1],linestyles="dashed",color="black")
-ax.plot((),(),"b-",label="spin up")
-ax.plot((),(),"r--",label="spin down")
-ax.legend(fontsize=16,loc="upper left")
+
+
+bsplot = BSPlotter(bs)#这个代码有点错误，好像是跟类型有关，我还没有弄明白
+
+
+
+
+
+#ax = plt.gca()
+#ax.set_title("NiO Band Structure", fontsize=20)
+#xlim = ax.get_xlim()
+#ax.hlines(0,xlim[0],xlim[1],linestyles="dashed",color="black")
+#ax.plot((),(),"b-",label="spin up")
+#ax.plot((),(),"r--",label="spin down")
+#ax.legend(fontsize=16,loc="upper left")
 
 
 

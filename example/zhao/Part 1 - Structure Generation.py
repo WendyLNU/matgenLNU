@@ -21,5 +21,5 @@ print(prim_cell)
 #我们将使用枚举结构结构转换类来枚举所有对称的不同结构。枚举结构是一个围绕枚举库的用户友好包装器，它是由HART等人编写的派生结构的FORTRAN库
 enum = EnumerateStructureTransformation()
 enumerated = enum.apply_transformation(prim_cell, 100)  # return no more than 100 structures
-structures = [d["structure"] for d in enumerated]
-print("%d structures returned." % len(structures))
+#structures = [d["structure"] for d in enumerated]
+#print("%d structures returned." % len(structures))
